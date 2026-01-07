@@ -36,13 +36,7 @@ services:
     <<: *airflow-common
     entrypoint: >
       bash -c "airflow db init &&
-               airflow users create
-               --username admin
-               --firstname admin
-               --lastname admin
-               --role Admin
-               --email admin@example.com
-               --password admin"
+      airflow users create --username admin --firstname admin --lastname admin --role Admin --email admin@example.com --password admin"
     depends_on:
       postgres:
         condition: service_healthy
